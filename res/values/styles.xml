@@ -17,4 +17,99 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+       	<!-- v1_ib -->
+	<style name="v1_ib">
+	    <item name="android:layout_width">45dp</item>
+		<item name="android:layout_height">45dp</item>
+		
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:layout_marginLeft">7dp</item>
+		<item name="android:layout_marginRight">7dp</item>
+		
+		
+	</style><!-- <style name="v1_ib"> -->
+	
+	
+	<!-- image_activity.xml -->
+	<style name="image_activity_ib">
+	    <item name="android:layout_width">70dp</item>
+	    <item name="android:layout_height">70dp</item>
+	    
+	    <item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		
+	</style><!-- image_activity.xml -->
+
+    <!-- REF http://stackoverflow.com/questions/3551169/change-background-color-of-preference answered May 11 '11 at 14:05 -->
+    <style name="PrefTheme">
+	    <item name="android:background">#000000</item>
+	    <item name="android:textSize">25sp</item>
+	</style>
+
+    <style name="tv_basic_3">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:background">@color/black</item>
+	    <item name="android:textColor">@color/white</item>
+	    <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="et_basic_1">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_width">0dp</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:background">@color/white</item>
+	    <item name="android:textColor">@color/black</item>
+	    <item name="android:padding">3dp</item>
+	    <item name="android:gravity">left</item>
+	    <item name="android:layout_gravity">center_vertical</item>
+	    
+    </style>
+
+    <style name="bt_basic_1">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:gravity">center_vertical|center_horizontal</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:textColor">@color/black</item>
+	    <item name="android:padding">3dp</item>
+    </style>
+    
+    <style name="ib_basic_1">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:gravity">center_vertical|center_horizontal</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:textColor">@color/black</item>
+	    <item name="android:padding">3dp</item>
+    </style>
+
+        <style name="tv_basic_2">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:background">#424242</item>
+	    <item name="android:textColor">@color/white</item>
+	    <item name="android:padding">1dp</item>
+    </style>
+    
+    <style name="tv_basic_1">
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_margin">5dp</item>
+	    <item name="android:background">@color/black</item>
+	    <item name="android:textColor">@color/white</item>
+	    <item name="android:textSize">25dp</item>
+	    <item name="android:padding">5dp</item>
+    </style>
+    
+    
 </resources>

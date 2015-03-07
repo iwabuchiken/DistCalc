@@ -98,7 +98,7 @@ public class CONS {
 		// Paths and names
 
 		////////////////////////////////
-		public final static String dbName = "ifm11.db";
+		public final static String dbName = "dc.db";
 		public final static String dbName_IFM10 = "ifm10.db";
 		public final static String dbName_Previous = "ifm11_previous.db";
 		
@@ -112,7 +112,8 @@ public class CONS {
 		public final static String dPath_Data_SDCard_Camera = 
 						dPath_Data_SDCard_Ext + "/dcim/Camera";
 		
-		public final static String dPath_Data_Root = "/mnt/sdcard-ext/ifm11_data";
+		public final static String dPath_Data_Root = "/mnt/sdcard-ext/dc_data";
+//		public final static String dPath_Data_Root = "/mnt/sdcard-ext/ifm11_data";
 		
 		public final static String dPath_dbFile_backup = dPath_Data_Root + "/backup";
 //		public final static String dPath_dbFile_backup = dPath_Data_Root + "/ifm11_backup";
@@ -128,6 +129,11 @@ public class CONS {
 		
 		public final static String fname_DB_Backup_ext = ".bk";
 		
+		///////////////////////////////////
+		//
+		// paths: log
+		//
+		///////////////////////////////////
 		public final static String dPath_Log = dPath_Data_Root + "/log";
 		
 		public final static String fname_Log = "log.txt";
@@ -136,7 +142,8 @@ public class CONS {
 		
 		public final static String fname_Log_ext = ".txt";
 		
-		public static final long logFile_MaxSize = 40000;
+		public static final long logFile_MaxSize = 30000;
+//		public static final long logFile_MaxSize = 40000;
 		
 		// admin items
 		public static final String admin_LastBackup = "last_backup";

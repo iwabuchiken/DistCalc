@@ -39,6 +39,7 @@ import java.nio.channels.FileChannel;
 import org.apache.commons.lang.StringUtils;
 
 import dc.listeners.others.STL;
+import utils.Methods;
 import utils.Tags;
 
 //import app.main.R;
@@ -116,14 +117,35 @@ public class MainActv extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// 
-//		MenuInflater mi = getMenuInflater();
-//		mi.inflate(R.menu.menu_main, menu);
+		MenuInflater mi = getMenuInflater();
+		mi.inflate(R.menu.menu_main, menu);
 //		
 		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+		
+		case R.id.menuMain_Admin://------------------------
+			
+			Methods.start_Activity_LogActv(this);
+			
+			break;
+		
+		case R.id.menuMain_DB://------------------------
+			
+			break;
+			
+		case R.id.menuMain_Prefs://------------------------
+			
+			break;
+			
+		default://------------------------
+			break;
+
+		}//switch (item.getItemId())
 
 		
 		return super.onOptionsItemSelected(item);

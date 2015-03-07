@@ -1557,7 +1557,7 @@ public class Methods_dlg {
 				(TextView) d2.findViewById(R.id.dlg_tmpl_confirm_simple_tv_item_name);
 		
 		// "DB"
-		tv_ItemName.setText(actv.getString(R.string.main_opt_menu_db_activity));
+		tv_ItemName.setText(actv.getString(R.string.menuMain_DB));
 
 		////////////////////////////////
 
@@ -1589,7 +1589,7 @@ public class Methods_dlg {
 		Dialog d1 = Methods_dlg.dlg_Template_Cancel(
 						actv,
 						R.layout.dlg_tmpl_cancel_lv,
-						R.string.main_opt_menu_others,
+						R.string.menuMain_Admin,
 						
 						R.id.dlg_tmpl_cancel_lv_bt_cancel,
 						Tags.DialogTags.GENERIC_DISMISS);

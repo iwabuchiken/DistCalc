@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/menuMain_DB"
+		android:title="@string/menuMain_DB"
+		android:icon="@drawable/ifm8_opt_menu_db_activity"></item>
+
+	<item 
+	    android:id="@+id/menuMain_Prefs" 
+	    android:title="@string/menuMain_Prefs" 
+	    android:icon="@drawable/s_01_timer_menu_listitem_filter_30x30_v3">
+	    
+	</item>
+	
+	<item 
+	    android:id="@+id/menuMain_Admin" 
+	    android:title="@string/menuMain_Admin" 
+	    android:icon="@drawable/general_ib_ball_blue_30x30">
+	    
+	</item>
+		
+</menu>

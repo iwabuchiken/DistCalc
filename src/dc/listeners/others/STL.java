@@ -2,6 +2,7 @@ package dc.listeners.others;
 
 import java.util.Locale;
 
+import utils.Methods;
 import utils.Tags;
 import android.app.Activity;
 import android.content.Context;
@@ -154,6 +155,12 @@ public class STL implements OnTouchListener {
 			Log.d("STL.java" + "["
 					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 					+ "]", msg_Log);
+
+			String log_msg = "ACTV_MAIN_LL_SWIPE";
+			Methods.write_Log(actv, log_msg, Thread.currentThread()
+					.getStackTrace()[2].getFileName(), Thread.currentThread()
+					.getStackTrace()[2].getLineNumber());
+			
 			
 			break;
 			

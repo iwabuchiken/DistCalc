@@ -29,12 +29,12 @@
 	<!-- main_menu.xml -->
 	    <string name="main_opt_menu_create_folder">Create folder</string>
 	    <string name="main_opt_menu_refresh_db">Refresh DB</string>
-	    <string name="main_opt_menu_db_activity">DB</string>
+	    <string name="menuMain_DB">DB</string>
 	    <string name="main_opt_menu_search">Search</string>
-	    <string name="main_opt_menu_preferences">Preferences</string>
+	    <string name="menuMain_Prefs">Preferences</string>
 	    <string name="main_opt_menu_history">History</string>
 	    <string name="main_opt_menu_ftp">FTP</string>
-	    <string name="main_opt_menu_others">Others</string>
+	    <string name="menuMain_Admin">Others</string>
 
 	    
     <!-- dlg_db_admin.xml -->

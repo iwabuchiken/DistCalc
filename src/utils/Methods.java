@@ -66,6 +66,7 @@ import android.widget.Toast;
 
 
 
+
 // Apache
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.net.ftp.FTP;
@@ -86,6 +87,7 @@ import org.json.JSONObject;
 
 import dc.items.LogItem;
 import dc.listeners.dialog.DL;
+import dc.main.LogActv;
 import dc.main.R;
 import dc.main.ShowLogActv;
 
@@ -3212,4 +3214,19 @@ public class Methods {
 		
 	}//start_Activity_LogActv
 
+	public static void 
+	start_Activity_LogActv
+	(Activity actv) {
+		
+		Intent i = new Intent();
+		
+		i.setClass(actv, LogActv.class);
+		
+		i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+		
+		actv.startActivity(i);
+		
+		
+	}//start_Activity_LogActv
+	
 }//public class Methods

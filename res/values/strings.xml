@@ -1,5 +1,225 @@
 <resources>
 
     <string name="app_name">DistCalc</string>
+    
+        <!-- Generic items -->
+	    <string name="generic_bt_ok">OK</string>
+	    <string name="generic_bt_cancel">キャンセル</string>
+	    
+	    <string name="generic_tv_confirm">確認</string>
+	    <string name="generic_tv_menu">メニュー</string>
+	    <string name="generic_tv_register">登録</string>
+	    <string name="generic_tv_edit">編集</string>
+	    <string name="generic_tv_delete">削除</string>
+	    <string name="generic_tv_upload">Upload</string>
+	    <string name="generic_tv_quit_app">Quit app?</string>
+    	<string name="generic_notice">Notice</string>
+    	
+    	<string name="generic_Clear">Clear</string>
+    	<string name="generic_Go">Go</string>
+    	
+    <!-- commons -->
+    	<string name="commons_lbl_drop_create_table">Drop/create table</string>
+   		<string name="commons_lbl_rb_and">AND</string>
+    	<string name="commons_lbl_rb_or">OR</string>
+    	<string name="commons_lbl_rb_not">NOT</string>
+    			
+    <string name="v1_tv_dir_path">Directory path</string>
+
+	<!-- main_menu.xml -->
+	    <string name="main_opt_menu_create_folder">Create folder</string>
+	    <string name="main_opt_menu_refresh_db">Refresh DB</string>
+	    <string name="main_opt_menu_db_activity">DB</string>
+	    <string name="main_opt_menu_search">Search</string>
+	    <string name="main_opt_menu_preferences">Preferences</string>
+	    <string name="main_opt_menu_history">History</string>
+	    <string name="main_opt_menu_ftp">FTP</string>
+	    <string name="main_opt_menu_others">Others</string>
+
+	    
+    <!-- dlg_db_admin.xml -->
+   		<string name="dlg_db_admin_title">DB Admin</string>
+   		<string name="dlg_db_admin_item_backup_db">Backup DB</string>
+   		<string name="dlg_db_admin_item_refresh_db">Refresh DB</string>
+   		
+   		<string name="dlg_db_admin_item_upload_db">Upload DB</string>
+   		
+   		<string name="dlg_db_admin_item_drop_table_ifm11">Drop table: ifm11</string>
+   		<string name="dlg_db_admin_item_create_table_ifm11">
+   		    							Create table: ifm11</string>
+   		    							
+   		<string name="dlg_db_admin_item_drop_table_refresh_log">
+   		    							Drop table: refresh_log</string>
+   		<string name="dlg_db_admin_item_create_table_refresh_log">
+   		    							Create table: refresh_log</string>
+   		    							
+   		<string name="dlg_db_admin_item_drop_table_memo_patterns">
+   		    							Drop table: memo_patterns</string>
+   		<string name="dlg_db_admin_item_create_table_memo_patterns">
+   		    							Create table: memo_patterns</string>
+   		    							
+   		<string name="dlg_db_admin_item_restore_db">
+   		    							Restore DB</string>
+   		
+   		<string name="dlg_db_admin_item_drop_table">
+   		    							Drop table?</string>
+   		
+   		<string name="dlg_db_admin_item_import_db_file">
+   		    							Import DB</string>
+   		    							
+   		<string name="dlg_db_admin_item_import_patterns">
+   		    							Import Patterns</string>
+   		
+   		<string name="dlg_db_admin_item_exec_sql">
+   		    							Exec sql</string>
+   		
+   		<string name="dlg_db_admin_item_exec_sql_confirm">
+   		    							Exec sql?</string>
+   		
+   		<string name="dlg_db_admin_exec_sql_add_col">
+   		    							Add column</string>
+   		
+   		<string name="dlg_db_admin_item_operations">
+   		    							Operations</string>
+   		    							
+    <!-- db_admin: operations -->
+   		<string name="dlg_db_ops_item_drop_create_tbl_patterns">
+   		    							Drop/Create table: memo_patterns</string>
+   		    							
+   		<string name="dlg_db_ops_item_import_patterns_from_previous">
+   		    							Import patterns from previous</string>
+   		
+   		<string name="dlg_db_ops_item_drop_create_tbl_admin">
+   		    							Drop/Create table: admin</string>
+   		
+    <!-- thumb_actv_menu.xml -->
+	    <string name="thumb_actv_menu_move_mode">移動モード</string>
+	    <string name="thumb_actv_menu_move_files">移動</string>
+
+	<!-- preferences.xml -->
+    	<string name="prefs_tnactv_list_font_size_title">Font size (in sp)</string>
+    	<string name="prefs_tnactv_list_font_size_summary">in sp</string>
+    	<string name="prefs_tnactv_list_font_size_key">font_size</string>
+    	
+    	<string name="prefs_tnactv_db_refresh_key">db_refresh_automatic</string>
+    	<string name="prefs_tnactv_db_refresh_summary">Every time when starting app</string>
+    	<string name="prefs_tnactv_db_refresh_titile">DB refresh automatic</string>
+
+    	<string name="prefs_tnactv_db_auto_backup_key">
+    	    									prefs_tnactv_db_auto_backup_key</string>
+    	<string name="prefs_tnactv_db_auto_backup_summary">
+    	    									Every 0 days</string>
+    	<string name="prefs_tnactv_db_auto_backup_title">
+    	    									DB auto backup</string>
+
+    <!-- image_actv_menu.xml -->
+	    <string name="image_actv_menu_add_memo">Memo</string>
+	    <string name="image_actv_menu_add_patterns">定型句登録</string>
+    	
+	<!-- dlg_add_memos.xml -->
+	    <string name="dlg_add_memos_tv_title">メモ</string>
+	    <string name="dlg_add_memos_bt_patterns">定型</string>
+	    
+	<!-- dlg: create dir -->
+   		<string name="dlg_create_dir_title">Create dir</string>
+   		<string name="dlg_create_dir_message">
+   		    		Available chars: a-zA-Z_\nNo \"__\"(double underbar)</string>
+
+   		
+	<!-- dlg_confirm_create_folder.xml -->
+    	<string name="dlg_confirm_create_folder_tv_message">
+    	    						Create dir?</string>
+
+    <!-- dlg_input_empty.xml -->
+	    <string name="dlg_input_empty_message">No input</string>
+
+   	<!-- dlg: ACTVMAIN_LV -->
+   		<string name="dlg_actvmain_lv_delete">Delete folder</string>
+   		<string name="dlg_actvmain_lv_delete_confirm_message">
+   		    						Delete folder?</string>
+	    	    
+   	<!-- dlg: move files -->
+   		<string name="dlg_move_files_title">Move files</string>
+   		<string name="dlg_move_files_title_folder">Move to folder</string>
+   		<string name="dlg_move_files_title_remote">Move to remote</string>
+   		
+   		<string name="dlg_move_files_confirm_move_to_folder_msg">
+   		    										Move files to folder?</string>
+   		<string name="dlg_move_files_confirm_move_to_rmeote_msg">
+   		    										Move files to remote?</string>
+   		<string name="dlg_move_files_confirm_move_to_flolder_top_msg">
+   		    										Move files to top dir?</string>
+   		
+   		<string name="dlg_move_files_item_folder">To folder</string>
+   		<string name="dlg_move_files_item_remote">To remote</string>
+
+   		
+    <!-- dlg_search.xml -->
+	    <string name="dlg_search_title">サーチ</string>
+	    <string name="dlg_search_tv_message">サーチする語句を入れてください（複数の場合、スペースで区切ります）</string>
+	    <string name="dlg_search_message_all_table">全テーブル検索</string>
+	    <string name="dlg_search_message_file_name">Search by file name</string>
+	    
+	    <string name="dlg_search_message_no_words">No search words</string>
+
+	<!-- dlg: conf: delete ti -->
+	    <string name="dlg_tmpl_confirm_simple_msg_delete_file">
+	        									Delete file, too</string>
+    <!-- dlg_edit_ti.xml -->
+    	<string name="dlg_edit_ti_title">Edit item</string>
+    	<string name="dlg_edit_ti_tv_file_name">File name</string>
+    	<string name="dlg_edit_ti_tv_file_path">File path</string>
+    	<string name="dlg_edit_ti_tv_memos">Memos</string>
+    	<string name="dlg_edit_ti_tv_table_name">Table name</string>
+    	<string name="dlg_edit_ti_cb_add_to_all_image">
+    	    								Add memo to all images</string>
+
+    <!-- dlg_memo_patterns.xml -->
+    	<string name="dlg_memo_patterns_title">定型</string>
+    			    	    
+    <!-- dlg_register_patterns.xml -->
+    <string name="dlg_register_patterns_title">定型句登録</string>
+    <string name="dlg_register_patterns_tv_word">語句</string>
+    <string name="dlg_register_patterns_tv_table_name">テーブル名</string>
+    <string name="dlg_register_patterns_tv_prompot_input">Pattern => Empty</string>
+    		    							    
+    <!-- dlg_delete_patterns.xml -->
+    	<string name="dlg_delete_patterns_title">Delete patterns</string>
+    	<string name="dlg_delete_patterns_conf_message">Delete pattern?</string>
+    
+    <!-- dlg: upload db file -->
+    	<string name="dlg_upload_db_title">Upload DB</string>
+    	
+    <!-- dlg: upload image -->
+    	<string name="dlg_upload_image_title">Upload</string>
+    	<string name="dlg_upload_image_item_remote">To remote</string>
+    	<string name="dlg_upload_image_item_email">Email</string>
+    	<string name="dlg_upload_image_item_tweet">Tweet</string>
+    
+    	<string name="dlg_upload_image_confirm">Upload to remote?</string>
+
+    <!-- dlg: MainActv: Others -->
+    	<string name="dlg_actv_main_other_see_log">See log</string>    	
+    	<string name="dlg_actv_main_other_Import_From10">Import data from IFM10</string>
+
+    <!-- labs -->
+    	<string name="opt_Menu_LABS_title">LABs</string>
+    	<string name="opt_Menu_LABS__Change_RGB">Change RGB</string>
+    	<string name="opt_Menu_LABS__Binary_Image">Binary image</string>
+    	<string name="opt_Menu_LABS__Rotate_Image">Rotate image</string>
+    	<string name="opt_Menu_LABS__RedColor_zero">Red color => 0</string>
+    	<string name="opt_Menu_LABS__BlueColor_zero">Blue color => 0</string>
+    	<string name="opt_Menu_LABS__GreenColor_zero">Green color => 0</string>
+    	<string name="opt_Menu_LABS__Canvas">Canvas</string>
+    
+    <!-- Menu: showlist -->
+    	<string name="menu_showlist_filter">Filter</string>
+    	<string name="menu_showlist_filter_history">Filter history</string>
+    	
+    	
+    <!-- dlg: canvas_Ops -->	
+    	<string name="menu_actv_canvas_Ops">Ops</string>
+    	<string name="menu_actv_canvas_Ops__GetRGB">Get RGB</string>
+    
 
 </resources>

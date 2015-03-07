@@ -2,7 +2,7 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	
-	android:id="@+id/LL_main"
+	android:id="@+id/actvMain_LL_Swipe"
 	
 	android:orientation="horizontal"
 	

@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,9 @@ import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 
 import org.apache.commons.lang.StringUtils;
+
+import dc.listeners.others.STL;
+import utils.Tags;
 
 //import app.main.R;
 
@@ -64,7 +68,7 @@ public class MainActv extends Activity {
 			----------------------------*/
 		
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.actv_main);
         
         /*----------------------------
 		 * 2-2. Set title
@@ -184,7 +188,32 @@ public class MainActv extends Activity {
 	protected void onStart() {
 
 		super.onStart();
+		
+		///////////////////////////////////
+		//
+		// listeners
+		//
+		///////////////////////////////////
+		_onStart_SetListeners();
+		
 	}//protected void onStart()
+
+	private void 
+	_onStart_SetListeners() {
+		// TODO Auto-generated method stub
+		
+		///////////////////////////////////
+		//
+		// LL: swipe
+		//
+		///////////////////////////////////
+		LinearLayout ll_Swipe = (LinearLayout) findViewById(R.id.actvMain_LL_Swipe);
+		
+		ll_Swipe.setTag(Tags.SwipeTags.ACTV_MAIN_LL_SWIPE);
+		
+		ll_Swipe.setOnTouchListener(new STL(this));
+		
+	}//_onStart_SetListeners
 
 	
 

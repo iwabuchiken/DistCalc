@@ -268,9 +268,19 @@ public class Tags {
 
 	public static enum ViewTags {
 		
-		CANVAS_MAIN,
+		CANVAS_MAIN, ACTV_MAIN_LL_SWIPE,
 		
 	}
 
+	public static enum SwipeTags {
+		
+		SWIPE_ACTV_MAIN,
+		
+		SWIPE_ACTV_SHOWLIST,
+
+		// Sensors
+		ACTV_SENSORS, ACTV_MAIN_LL_SWIPE,
+
+	}
 	
 }//public class Tags

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical|center_horizontal" >
+
+        <TextView
+            android:id="@+id/actvMain_TV"
+            style="@style/tv_basic_1"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <!-- REF relative layout http://stackoverflow.com/questions/2386866/how-to-align-views-at-the-bottom-of-the-screen answered Mar 5 '10 at 13:14 -->
+    <LinearLayout
+        android:id="@+id/actvMain_LL_Swipe"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/darkgreen"
+        android:orientation="horizontal" >
+
+    </LinearLayout>
+
+</RelativeLayout>

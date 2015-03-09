@@ -1,4 +1,4 @@
-package utils;
+package dc.utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,6 +11,8 @@ import dc.items.LogItem;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.provider.MediaStore;
@@ -452,6 +454,27 @@ public class CONS {
 		public static ArrayAdapter<String> adp_dir_list = null;
 
 		public static Adp_MainList aAdapter;
+		
+		////////////////////////////////
+
+		// Location
+
+		////////////////////////////////
+		public static LocationManager locationManager_;
+
+		// LocationProvider
+		public static LocationProvider locationProvider_;
+		
+		public static boolean locationObtained = false; 
+
+		public static LocationManager mLocationManager;
+			
+		// Longitude
+		public static Double longitude;
+//		public static double longitude = CONS.Admin.INITIAL_LONGITUTDE_VALUE;
+		
+		// Longitude
+		public static Double latitude;
 		
 	}
 

@@ -1,8 +1,8 @@
 package dc.listeners.dialog;
 
 
-import utils.CONS;
-import utils.Tags;
+import dc.utils.CONS;
+import dc.utils.Tags;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;

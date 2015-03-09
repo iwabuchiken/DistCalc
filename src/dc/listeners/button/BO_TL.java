@@ -1,7 +1,7 @@
 package dc.listeners.button;
 
 import dc.main.R;
-import utils.Tags;
+import dc.utils.Tags;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;

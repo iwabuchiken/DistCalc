@@ -1,4 +1,4 @@
-package utils;
+package dc.utils;
 
 public class Tags {
 

@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Locale;
 
 import dc.main.R;
-import utils.CONS;
-import utils.DBUtils;
-import utils.Methods;
+import dc.utils.CONS;
+import dc.utils.DBUtils;
+import dc.utils.Methods;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;

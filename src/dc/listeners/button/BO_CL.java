@@ -4,9 +4,9 @@ import java.io.File;
 
 import org.apache.commons.lang.StringUtils;
 
-import utils.CONS;
-import utils.Methods;
-import utils.Tags;
+import dc.utils.CONS;
+import dc.utils.Methods;
+import dc.utils.Tags;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;

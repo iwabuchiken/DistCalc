@@ -2,8 +2,8 @@ package dc.listeners.others;
 
 import java.util.Locale;
 
-import utils.Methods;
-import utils.Tags;
+import dc.utils.Methods;
+import dc.utils.Tags;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;

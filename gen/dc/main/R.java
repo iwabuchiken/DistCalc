@@ -84,7 +84,8 @@ public final class R {
         public static final int menu_icon_admin_32x32_purple=0x7f02002d;
         public static final int menu_icon_admin_32x32_red=0x7f02002e;
         public static final int menu_icon_admin_32x32_yellow=0x7f02002f;
-        public static final int s_01_timer_menu_listitem_filter_30x30_v3=0x7f020030;
+        public static final int proj_icon=0x7f020030;
+        public static final int s_01_timer_menu_listitem_filter_30x30_v3=0x7f020031;
     }
     public static final class id {
         public static final int actvMain_LL_Swipe=0x7f080009;

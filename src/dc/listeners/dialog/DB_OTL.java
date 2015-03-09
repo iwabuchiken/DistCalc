@@ -1,6 +1,6 @@
 package dc.listeners.dialog;
 
-import utils.Tags;
+import dc.utils.Tags;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;

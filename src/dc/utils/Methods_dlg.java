@@ -1,4 +1,4 @@
-package utils;
+package dc.utils;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -16,13 +16,13 @@ import java.util.TimerTask;
 
 import org.apache.commons.lang.StringUtils;
 
-import utils.Tags.DialogTags;
 import dc.adapters.Adp_ListItems;
 import dc.items.ListItem;
 import dc.listeners.dialog.DB_OCL;
 import dc.listeners.dialog.DB_OTL;
 import dc.listeners.dialog.DOI_CL;
 import dc.main.R;
+import dc.utils.Tags.DialogTags;
 import android.app.Activity;
 import android.app.Dialog;
 import android.database.Cursor;

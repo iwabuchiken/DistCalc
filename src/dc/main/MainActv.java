@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,6 +17,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -25,6 +31,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -39,13 +46,14 @@ import java.nio.channels.FileChannel;
 import org.apache.commons.lang.StringUtils;
 
 import dc.listeners.others.STL;
-import utils.Methods;
-import utils.Tags;
+import dc.utils.CONS;
+import dc.utils.Methods;
+import dc.utils.Tags;
 
 //import app.main.R;
 
 
-public class MainActv extends Activity {
+public class MainActv extends Activity implements LocationListener {
 	
 	public static Vibrator vib;
 
@@ -102,6 +110,27 @@ public class MainActv extends Activity {
 				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 				+ "]", "onDestroy()");
 		
+		///////////////////////////////////
+		//
+		// location manager
+		//
+		///////////////////////////////////
+		if (CONS.MainActv.locationManager_ != null) {
+			
+			CONS.MainActv.locationManager_.removeUpdates(this);
+			
+		}
+		
+		CONS.MainActv.locationObtained = false;
+		
+		// Log
+		String msg_Log = "Location manager => updates removed";
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		
+		
 		super.onDestroy();
 		
 	}//protected void onDestroy()
@@ -109,7 +138,7 @@ public class MainActv extends Activity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
-//		Methods.confirm_quit(this, keyCode);
+		Methods.confirm_quit(this, keyCode);
 		
 		return super.onKeyDown(keyCode, event);
 	}
@@ -218,6 +247,11 @@ public class MainActv extends Activity {
 		///////////////////////////////////
 		_onStart_SetListeners();
 		
+		/***************************************
+		 * Prepare: data
+		 ***************************************/
+		prep_Data();
+		
 	}//protected void onStart()
 
 	private void 
@@ -237,6 +271,113 @@ public class MainActv extends Activity {
 		
 	}//_onStart_SetListeners
 
-	
+	@Override
+	public void 
+	onLocationChanged(Location loc) {
+		// TODO Auto-generated method stub
+		
+		CONS.MainActv.longitude = loc.getLongitude();
+		
+		CONS.MainActv.latitude = loc.getLatitude();
+		
+		// Log
+		String msg_Log;
+		
+		msg_Log = String.format(
+				Locale.JAPAN,
+				"longi=%f / lat=%f", CONS.MainActv.longitude, CONS.MainActv.latitude
+				);
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		if (CONS.MainActv.locationObtained == false
+				&& CONS.MainActv.longitude != null
+				&& CONS.MainActv.latitude != null) {
+			
+			CONS.MainActv.locationObtained = true;
+			
+		} else {//if (CONS.MainActv.locationObtained == false
+			
+			
+			//REF http://alvinalexander.com/programming/printf-format-cheat-sheet
+			String val_Longi = String.format("%3.9f", CONS.MainActv.longitude);
+			String val_Lat = String.format("%3.9f", CONS.MainActv.latitude);
+			
+			////////////////////////////////
+
+			// monitor distance
+
+			////////////////////////////////
+			
+		}//if (CONS.MainActv.locationObtained == false
+
+	}//onLocationChanged
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void prep_Data() {
+		// TODO Auto-generated method stub
+		CONS.MainActv.locationManager_ =
+				(LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+		
+		Criteria criteria = _setup_SetCriteria();
+		
+		String provider = CONS.MainActv.locationManager_.getBestProvider(criteria, true);
+		
+		CONS.MainActv.locationProvider_ =
+				CONS.MainActv.locationManager_.getProvider(LocationManager.GPS_PROVIDER);
+		
+		CONS.MainActv.locationManager_
+				.requestLocationUpdates(
+						CONS.MainActv.locationProvider_.getName(),
+						0, 0, this);
+
+	}//private void prepareData()
+
+	private Criteria _setup_SetCriteria() {
+		// TODO Auto-generated method stub
+		Criteria criteria = new Criteria();
+
+		//Accuracy繧呈欠螳�
+		criteria.setAccuracy(Criteria.ACCURACY_FINE);
+//		criteria.setAccuracy(Criteria.ACCURACY_COARSE);
+		
+		//PowerRequirement繧呈欠螳�
+		criteria.setPowerRequirement(Criteria.POWER_LOW);
+		
+		//SpeedRequired繧呈欠螳�
+		criteria.setSpeedRequired(false);
+		
+		//AltitudeRequired繧呈欠螳�
+		criteria.setAltitudeRequired(false);
+		
+		//BearingRequired繧呈欠螳�
+		criteria.setBearingRequired(false);
+		
+		//CostAllowed繧呈欠螳�
+		criteria.setCostAllowed(false);
+
+		return criteria;
+		
+	}//private void _setup_SetCriteria()
+
 
 }//public class MainActv extends Activity

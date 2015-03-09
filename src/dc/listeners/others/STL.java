@@ -146,20 +146,21 @@ public class STL implements OnTouchListener {
 
 		case ACTV_MAIN_LL_SWIPE:
 			
-			// Log
-			msg_Log = String.format(
-					Locale.JAPAN,
-					"ACTV_MAIN_LL_SWIPE"
-					);
-			
-			Log.d("STL.java" + "["
-					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-					+ "]", msg_Log);
-
-			String log_msg = "ACTV_MAIN_LL_SWIPE";
-			Methods.write_Log(actv, log_msg, Thread.currentThread()
-					.getStackTrace()[2].getFileName(), Thread.currentThread()
-					.getStackTrace()[2].getLineNumber());
+			_onSwipeLeft__ACTV_MAIN_LL_SWIPE();
+//			// Log
+//			msg_Log = String.format(
+//					Locale.JAPAN,
+//					"ACTV_MAIN_LL_SWIPE"
+//					);
+//			
+//			Log.d("STL.java" + "["
+//					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//					+ "]", msg_Log);
+//
+//			String log_msg = "ACTV_MAIN_LL_SWIPE";
+//			Methods.write_Log(actv, log_msg, Thread.currentThread()
+//					.getStackTrace()[2].getFileName(), Thread.currentThread()
+//					.getStackTrace()[2].getLineNumber());
 			
 			
 			break;
@@ -177,6 +178,14 @@ public class STL implements OnTouchListener {
 		}//switch(this.tag)
 		
 	}//onSwipeLeft()
+
+	private void 
+	_onSwipeLeft__ACTV_MAIN_LL_SWIPE() {
+		// TODO Auto-generated method stub
+		
+		Methods.start_Activity_CompassActv(actv);
+		
+	}//_onSwipeLeft__ACTV_MAIN_LL_SWIPE
 
 	public void 
 	onSwipeTop() {

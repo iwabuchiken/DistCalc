@@ -92,4 +92,29 @@ public class CompassActv extends Activity implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         // not in use
     }
+
+	@Override
+	public void onBackPressed() {
+		/*----------------------------
+		 * memo
+			----------------------------*/
+		///////////////////////////////////
+		//
+		// stop: sensor
+		//
+		///////////////////////////////////
+		this.stopSensor();
+		
+		this.finish();
+		
+		overridePendingTransition(0, 0);
+		
+	}//public void onBackPressed()
+    
+	private void stopSensor() {
+		
+		mSensorManager.unregisterListener(this);
+		
+	}
+    
 }

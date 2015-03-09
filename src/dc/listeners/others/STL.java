@@ -12,9 +12,9 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
+//import android.view.MotionEvent;
+//import android.view.View;
+//import android.view.View.OnTouchListener;
 
 //REF http://stackoverflow.com/questions/4139288/android-how-to-handle-right-to-left-swipe-gestures answered Oct 17 '12 at 16:19
 public class STL implements OnTouchListener {

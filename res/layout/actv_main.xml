@@ -2,22 +2,199 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/actvMain_LL_Message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:gravity="center_vertical|center_horizontal" >
 
         <TextView
-            android:id="@+id/actvMain_TV"
+            android:id="@+id/actvMain_TV_Msg"
             style="@style/tv_basic_1"
             android:layout_gravity="center_vertical|center_horizontal"
             android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/actvMain_IB_Calc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@color/white"
+            android:src="@drawable/general_ib_ball_blue_48x48" />
+
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/actvMain_LL_A2C"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@id/actvMain_LL_Message"
+        android:layout_centerInParent="false"
+        android:layout_marginTop="10dp"
+        android:background="@color/yellow_pale_bright"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/actvMain_TV_A2C"
+            style="@style/tv_basic_1"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:text="A --> C"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/actvMain_TV_A2C_Val"
+                style="@style/tv_basic_1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="TextView" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_A2C_Get"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_ok_green_64x64" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_A2C_Del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_clear_yellow_64x64" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
     <!-- REF relative layout http://stackoverflow.com/questions/2386866/how-to-align-views-at-the-bottom-of-the-screen answered Mar 5 '10 at 13:14 -->
+
+    <LinearLayout
+        android:id="@+id/actvMain_LL_B2A"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actvMain_LL_A2C"
+        android:layout_marginTop="10dp"
+        android:background="@color/yellow_dark"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/actvMain_TV_B2A"
+            style="@style/tv_basic_1"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:text="B --> A"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/actvMain_TV_B2A_Val"
+                style="@style/tv_basic_1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="TextView" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_B2A_Get"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_ok_green_64x64" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_B2A_Del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_clear_yellow_64x64" />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/actvMain_LL_B2C"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actvMain_LL_B2A"
+        android:layout_marginTop="10dp"
+        android:background="@color/yellow_pale_dark"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/actvMain_TV_B2C"
+            style="@style/tv_basic_1"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:text="B --> C"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/actvMain_TV_B2C_Val"
+                style="@style/tv_basic_1"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="TextView" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_B2C_Get"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_ok_green_64x64" />
+
+            <ImageButton
+                android:id="@+id/actvMain_IB_B2C_Del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:src="@drawable/general_ib_clear_yellow_64x64" />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/actvMain_LL_Swipe"
         android:layout_width="match_parent"

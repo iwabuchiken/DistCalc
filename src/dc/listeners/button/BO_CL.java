@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.commons.lang.StringUtils;
 
+import dc.main.R;
 import dc.utils.CONS;
 import dc.utils.Methods;
 import dc.utils.Tags;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class BO_CL implements OnClickListener {
 	/*----------------------------
@@ -61,6 +63,12 @@ public class BO_CL implements OnClickListener {
 		//
 		switch (tag) {
 
+		case ACTV_MAIN_IB_GET_A2C:
+			
+			case_ACTV_MAIN_IB_GET_A2C();
+			
+			break;
+			
 		case ib_up:
 			
 			case_ACTV_MAIN_IB_UP();
@@ -184,6 +192,43 @@ public class BO_CL implements OnClickListener {
 		}//switch (tag)
 		
 	}//public void onClick(View v)
+
+	private void 
+	case_ACTV_MAIN_IB_GET_A2C() {
+		// TODO Auto-generated method stub
+		
+		///////////////////////////////////
+		//
+		// view
+		//
+		///////////////////////////////////
+		TextView tv_A2C = (TextView) actv.findViewById(R.id.actvMain_TV_A2C_Val);
+		
+		///////////////////////////////////
+		//
+		// validate
+		//
+		///////////////////////////////////
+		Double longi = CONS.MainActv.longitude;
+		Double lat = CONS.MainActv.latitude;
+		
+		if (longi == null || lat == null) {
+			
+			tv_A2C.setText("No loc data");
+			
+//		} else if (CONS.MainActv.degree == null) {
+//			
+//			tv_A2C.setText("No loc data");
+		}
+		
+		///////////////////////////////////
+		//
+		// display: degree
+		//
+		///////////////////////////////////
+		tv_A2C.setText(String.valueOf(CONS.MainActv.degree));
+		
+	}//case_ACTV_MAIN_IB_GET_A2C
 
 	private void 
 	case_ACTV_SHOWLOG_IB_TOP() {

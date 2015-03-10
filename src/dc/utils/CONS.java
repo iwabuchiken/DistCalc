@@ -476,6 +476,14 @@ public class CONS {
 		// Longitude
 		public static Double latitude;
 		
+		///////////////////////////////////
+		//
+		// sensors
+		//
+		///////////////////////////////////
+        // get the angle around the z-axis rotated
+        public static float degree;
+
 	}
 
 	public static class LogActv {

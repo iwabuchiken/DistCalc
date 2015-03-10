@@ -206,7 +206,7 @@ public class Tags {
 		ACTV_LOG_IB_UP, 
 		
 		ACTV_MAIN_BT_GO, 
-		ACTV_MAIN_BT_CLEAR,
+		ACTV_MAIN_BT_CLEAR, ACTV_MAIN_IB_GET_A2C,
 
 	}//public static enum ButtonTags
 	

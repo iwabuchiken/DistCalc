@@ -18,6 +18,10 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -45,6 +49,7 @@ import java.nio.channels.FileChannel;
 
 import org.apache.commons.lang.StringUtils;
 
+import dc.listeners.button.BO_CL;
 import dc.listeners.others.STL;
 import dc.utils.CONS;
 import dc.utils.Methods;
@@ -53,9 +58,12 @@ import dc.utils.Tags;
 //import app.main.R;
 
 
-public class MainActv extends Activity implements LocationListener {
+public class MainActv extends Activity implements LocationListener, SensorEventListener {
 	
 	public static Vibrator vib;
+
+    // device sensor manager
+    private SensorManager mSensorManager;
 
 	
     /** Called when the activity is first created. */
@@ -190,6 +198,15 @@ public class MainActv extends Activity implements LocationListener {
 				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 				+ "]", "onPause()");
 
+		///////////////////////////////////
+		//
+		// sensors
+		//
+		///////////////////////////////////
+        // to stop the listener and save battery
+        mSensorManager.unregisterListener(this);
+
+		
 //		// Log
 //		Log.d("MainActv.java" + "["
 //				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
@@ -210,7 +227,16 @@ public class MainActv extends Activity implements LocationListener {
 				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 				+ "]", "onResume()");
 
-		
+		///////////////////////////////////
+		//
+		// sensors
+		//
+		///////////////////////////////////
+        // for the system's orientation sensor registered listeners
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                SensorManager.SENSOR_DELAY_GAME);
+
+        
 		/*********************************
 		 * 2. Set enables
 		 *********************************/
@@ -252,6 +278,15 @@ public class MainActv extends Activity implements LocationListener {
 		 ***************************************/
 		prep_Data();
 		
+		///////////////////////////////////
+		//
+		// sensors
+		//
+		///////////////////////////////////
+        // initialize your android device sensor capabilities
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+		
 	}//protected void onStart()
 
 	private void 
@@ -268,6 +303,17 @@ public class MainActv extends Activity implements LocationListener {
 		ll_Swipe.setTag(Tags.SwipeTags.ACTV_MAIN_LL_SWIPE);
 		
 		ll_Swipe.setOnTouchListener(new STL(this));
+		
+		///////////////////////////////////
+		//
+		// Button: Get
+		//
+		///////////////////////////////////
+		ImageButton ib_Get_A2C = (ImageButton) findViewById(R.id.actvMain_IB_A2C_Get);
+		
+		ib_Get_A2C.setTag(Tags.ButtonTags.ACTV_MAIN_IB_GET_A2C);
+		
+		ib_Get_A2C.setOnClickListener(new BO_CL(this));
 		
 	}//_onStart_SetListeners
 
@@ -378,6 +424,21 @@ public class MainActv extends Activity implements LocationListener {
 		return criteria;
 		
 	}//private void _setup_SetCriteria()
+
+	@Override
+	public void onAccuracyChanged(Sensor arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		// TODO Auto-generated method stub
+
+        // get the angle around the z-axis rotated
+        CONS.MainActv.degree = Math.round(event.values[0]);
+
+	}
 
 
 }//public class MainActv extends Activity

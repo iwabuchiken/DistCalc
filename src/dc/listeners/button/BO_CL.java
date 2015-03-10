@@ -69,6 +69,18 @@ public class BO_CL implements OnClickListener {
 			
 			break;
 			
+		case ACTV_MAIN_IB_GET_B2A:
+			
+			case_ACTV_MAIN_IB_GET_B2A();
+			
+			break;
+			
+		case ACTV_MAIN_IB_GET_B2C:
+			
+			case_ACTV_MAIN_IB_GET_B2C();
+			
+			break;
+			
 		case ib_up:
 			
 			case_ACTV_MAIN_IB_UP();
@@ -230,6 +242,82 @@ public class BO_CL implements OnClickListener {
 		
 	}//case_ACTV_MAIN_IB_GET_A2C
 
+	private void 
+	case_ACTV_MAIN_IB_GET_B2A() {
+		// TODO Auto-generated method stub
+		
+		///////////////////////////////////
+		//
+		// view
+		//
+		///////////////////////////////////
+		TextView tv_B2A = (TextView) actv.findViewById(R.id.actvMain_TV_B2A_Val);
+		
+		///////////////////////////////////
+		//
+		// validate
+		//
+		///////////////////////////////////
+		Double longi = CONS.MainActv.longitude;
+		Double lat = CONS.MainActv.latitude;
+		
+		if (longi == null || lat == null) {
+			
+			tv_B2A.setText("No loc data");
+			
+//		} else if (CONS.MainActv.degree == null) {
+//			
+//			tv_B2A.setText("No loc data");
+		}
+		
+		///////////////////////////////////
+		//
+		// display: degree
+		//
+		///////////////////////////////////
+		tv_B2A.setText(String.valueOf(CONS.MainActv.degree));
+		
+	}//case_ACTV_MAIN_IB_GET_B2A
+	
+	
+	private void 
+	case_ACTV_MAIN_IB_GET_B2C() {
+		// TODO Auto-generated method stub
+		
+		///////////////////////////////////
+		//
+		// view
+		//
+		///////////////////////////////////
+		TextView tv_B2C = (TextView) actv.findViewById(R.id.actvMain_TV_B2C_Val);
+		
+		///////////////////////////////////
+		//
+		// validate
+		//
+		///////////////////////////////////
+		Double longi = CONS.MainActv.longitude;
+		Double lat = CONS.MainActv.latitude;
+		
+		if (longi == null || lat == null) {
+			
+			tv_B2C.setText("No loc data");
+			
+//		} else if (CONS.MainActv.degree == null) {
+//			
+//			tv_B2C.setText("No loc data");
+		}
+		
+		///////////////////////////////////
+		//
+		// display: degree
+		//
+		///////////////////////////////////
+		tv_B2C.setText(String.valueOf(CONS.MainActv.degree));
+		
+	}//case_ACTV_MAIN_IB_GET_B2C
+	
+	
 	private void 
 	case_ACTV_SHOWLOG_IB_TOP() {
 		// TODO Auto-generated method stub

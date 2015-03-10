@@ -306,7 +306,7 @@ public class MainActv extends Activity implements LocationListener, SensorEventL
 		
 		///////////////////////////////////
 		//
-		// Button: Get
+		// Button: Get: A2C
 		//
 		///////////////////////////////////
 		ImageButton ib_Get_A2C = (ImageButton) findViewById(R.id.actvMain_IB_A2C_Get);
@@ -314,6 +314,28 @@ public class MainActv extends Activity implements LocationListener, SensorEventL
 		ib_Get_A2C.setTag(Tags.ButtonTags.ACTV_MAIN_IB_GET_A2C);
 		
 		ib_Get_A2C.setOnClickListener(new BO_CL(this));
+		
+		///////////////////////////////////
+		//
+		// Button: Get: B2A
+		//
+		///////////////////////////////////
+		ImageButton ib_Get_B2A = (ImageButton) findViewById(R.id.actvMain_IB_B2A_Get);
+		
+		ib_Get_B2A.setTag(Tags.ButtonTags.ACTV_MAIN_IB_GET_B2A);
+		
+		ib_Get_B2A.setOnClickListener(new BO_CL(this));
+		
+		///////////////////////////////////
+		//
+		// Button: Get: B2C
+		//
+		///////////////////////////////////
+		ImageButton ib_Get_B2C = (ImageButton) findViewById(R.id.actvMain_IB_B2C_Get);
+		
+		ib_Get_B2C.setTag(Tags.ButtonTags.ACTV_MAIN_IB_GET_B2C);
+		
+		ib_Get_B2C.setOnClickListener(new BO_CL(this));
 		
 	}//_onStart_SetListeners
 

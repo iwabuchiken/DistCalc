@@ -337,6 +337,17 @@ public class MainActv extends Activity implements LocationListener, SensorEventL
 		
 		ib_Get_B2C.setOnClickListener(new BO_CL(this));
 		
+		///////////////////////////////////
+		//
+		// Button: calc
+		//
+		///////////////////////////////////
+		ImageButton ib_Calc = (ImageButton) findViewById(R.id.actvMain_IB_Calc);
+		
+		ib_Calc.setTag(Tags.ButtonTags.ACTV_MAIN_IB_CALC);
+		
+		ib_Calc.setOnClickListener(new BO_CL(this));
+		
 	}//_onStart_SetListeners
 
 	@Override
@@ -348,17 +359,17 @@ public class MainActv extends Activity implements LocationListener, SensorEventL
 		
 		CONS.MainActv.latitude = loc.getLatitude();
 		
-		// Log
-		String msg_Log;
-		
-		msg_Log = String.format(
-				Locale.JAPAN,
-				"longi=%f / lat=%f", CONS.MainActv.longitude, CONS.MainActv.latitude
-				);
-		
-		Log.d("MainActv.java" + "["
-				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-				+ "]", msg_Log);
+//		// Log
+//		String msg_Log;
+//		
+//		msg_Log = String.format(
+//				Locale.JAPAN,
+//				"longi=%f / lat=%f", CONS.MainActv.longitude, CONS.MainActv.latitude
+//				);
+//		
+//		Log.d("MainActv.java" + "["
+//				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//				+ "]", msg_Log);
 		
 		if (CONS.MainActv.locationObtained == false
 				&& CONS.MainActv.longitude != null

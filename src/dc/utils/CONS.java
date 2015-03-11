@@ -478,13 +478,28 @@ public class CONS {
 		
 		///////////////////////////////////
 		//
-		// sensors
+		// sensors: degree
 		//
 		///////////////////////////////////
         // get the angle around the z-axis rotated
         public static float degree;
 
-	}
+        public static float deg_A2C = -1;
+        public static float deg_B2A = -1;
+        public static float deg_B2C = -1;
+        
+        ///////////////////////////////////
+		//
+		// distance
+		//
+		///////////////////////////////////
+        public static Double locB_Longi;
+        public static Double locB_Lat;
+        
+        public static Double locA_Longi;
+        public static Double locA_Lat;
+        
+	}//public static class MainActv
 
 	public static class LogActv {
 		

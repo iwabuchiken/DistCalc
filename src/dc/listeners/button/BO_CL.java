@@ -1,12 +1,14 @@
 package dc.listeners.button;
 
 import java.io.File;
+import java.util.Locale;
 
 import org.apache.commons.lang.StringUtils;
 
 import dc.main.R;
 import dc.utils.CONS;
 import dc.utils.Methods;
+import dc.utils.Methods_dlg;
 import dc.utils.Tags;
 import android.app.Activity;
 import android.app.ListActivity;
@@ -26,6 +28,10 @@ public class BO_CL implements OnClickListener {
 	//
 	Activity actv;
 
+	TextView tv_A2C;
+	TextView tv_B2A;
+	TextView tv_B2C;
+	
 	//
 	Vibrator vib;
 	
@@ -63,6 +69,12 @@ public class BO_CL implements OnClickListener {
 		//
 		switch (tag) {
 
+		case ACTV_MAIN_IB_CALC:
+			
+			case_ACTV_MAIN_IB_CALC();
+			
+			break;
+			
 		case ACTV_MAIN_IB_GET_A2C:
 			
 			case_ACTV_MAIN_IB_GET_A2C();
@@ -206,6 +218,123 @@ public class BO_CL implements OnClickListener {
 	}//public void onClick(View v)
 
 	private void 
+	case_ACTV_MAIN_IB_CALC() {
+		// TODO Auto-generated method stub
+
+		///////////////////////////////////
+		//
+		// calc: distance
+		//
+		///////////////////////////////////
+		// validate
+		String token = "Degree: %s --> Not ready";
+		int colorId = R.color.red;
+		
+		if (CONS.MainActv.deg_A2C == -1) {
+//			if (tv_A2C == null) {
+			
+			String message = String.format(
+						Locale.JAPAN,
+						token, "A to C");
+//			int colorId = R.color.red;
+//			int colorId = actv.getResources().getColor(R.color.blue1);
+//			int colorId = actv.getResources().getColor(R.color.red);
+			
+			Methods_dlg.dlg_ShowMessage(actv, message, colorId);
+			
+			return;
+			
+		} else if (CONS.MainActv.deg_B2A == -1) {
+//		} else if (tv_B2A == null) {
+				
+//				String message = "Degree: B to A --> Not ready";
+//				int colorId = R.color.red;
+
+			String message = String.format(
+					Locale.JAPAN,
+					token, "B to A");
+
+			Methods_dlg.dlg_ShowMessage(actv, message, colorId);
+			
+			return;
+				
+		} else if (CONS.MainActv.deg_B2C == -1) {
+//		} else if (tv_B2C == null) {
+			
+//			String message = "Degree: B to C --> Not ready";
+//			int colorId = R.color.red;
+
+			String message = String.format(
+					Locale.JAPAN,
+					token, "B to C");
+
+			Methods_dlg.dlg_ShowMessage(actv, message, colorId);
+			
+			return;
+			
+		} else if (CONS.MainActv.locA_Lat == null
+					|| CONS.MainActv.locA_Longi == null
+					|| CONS.MainActv.locB_Lat == null
+					|| CONS.MainActv.locB_Longi == null
+					) {
+			
+			String message = "Loc data --> Not ready";
+//			int colorId = actv.getResources().getColor(R.color.red);
+			
+			Methods_dlg.dlg_ShowMessage(actv, message, colorId);
+			
+			return;
+			
+		}
+		
+		///////////////////////////////////
+		//
+		// calc
+		//
+		///////////////////////////////////
+//		double betha_2 = CONS.MainActv.deg_B2A;
+		
+		double alpha_1 = CONS.MainActv.deg_A2C + 180 - CONS.MainActv.deg_B2A;
+//		double alpha_1 = CONS.MainActv.deg_A2C - 180 + betha_2;
+		
+		double betha_1 = (double) CONS.MainActv.deg_B2A - CONS.MainActv.deg_B2C;
+//		double betha_1 = (double) CONS.MainActv.deg_B2C - CONS.MainActv.deg_B2A;
+		
+		// Log
+		String msg_Log;
+		
+		msg_Log = String.format(
+				Locale.JAPAN,
+				"A2C = %f / B2A = %f / B2C = %f *** "
+				+ "alpha_1 = %f / betha_1 = %f", 
+				CONS.MainActv.deg_A2C, CONS.MainActv.deg_B2A, CONS.MainActv.deg_B2C,
+				alpha_1, betha_1
+				);
+		
+		Log.d("BO_CL.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		///////////////////////////////////
+		//
+		// disp: degrees
+		//
+		///////////////////////////////////
+		TextView tv_Calc = (TextView) actv.findViewById(R.id.actvMain_TV_Msg);
+		
+		String message = String.format(
+				Locale.JAPAN,
+				"a1=%.2f / b1=%.2f", 
+				alpha_1, betha_1
+				);
+		
+		tv_Calc.setText(message);
+		
+
+	}//case_ACTV_MAIN_IB_CALC()
+	
+
+	private void 
 	case_ACTV_MAIN_IB_GET_A2C() {
 		// TODO Auto-generated method stub
 		
@@ -214,7 +343,7 @@ public class BO_CL implements OnClickListener {
 		// view
 		//
 		///////////////////////////////////
-		TextView tv_A2C = (TextView) actv.findViewById(R.id.actvMain_TV_A2C_Val);
+		tv_A2C = (TextView) actv.findViewById(R.id.actvMain_TV_A2C_Val);
 		
 		///////////////////////////////////
 		//
@@ -228,9 +357,8 @@ public class BO_CL implements OnClickListener {
 			
 			tv_A2C.setText("No loc data");
 			
-//		} else if (CONS.MainActv.degree == null) {
-//			
-//			tv_A2C.setText("No loc data");
+			return;
+			
 		}
 		
 		///////////////////////////////////
@@ -238,11 +366,30 @@ public class BO_CL implements OnClickListener {
 		// display: degree
 		//
 		///////////////////////////////////
-		tv_A2C.setText(String.valueOf(CONS.MainActv.degree));
+		CONS.MainActv.deg_A2C = CONS.MainActv.degree;
+		
+		tv_A2C.setText(String.valueOf(CONS.MainActv.deg_A2C));
+//		tv_A2C.setText(String.valueOf(CONS.MainActv.degree));
+
+		
+		///////////////////////////////////
+		//
+		// loc
+		//
+		///////////////////////////////////
+//		if (CONS.MainActv.locA_Longi == null) {
+//			
+//			CONS.MainActv.locA_Longi = new Double();
+//			
+//		}
+		
+		CONS.MainActv.locA_Longi = Double.valueOf(CONS.MainActv.longitude);
+		CONS.MainActv.locA_Lat = Double.valueOf(CONS.MainActv.latitude);
 		
 	}//case_ACTV_MAIN_IB_GET_A2C
 
 	private void 
+
 	case_ACTV_MAIN_IB_GET_B2A() {
 		// TODO Auto-generated method stub
 		
@@ -251,7 +398,7 @@ public class BO_CL implements OnClickListener {
 		// view
 		//
 		///////////////////////////////////
-		TextView tv_B2A = (TextView) actv.findViewById(R.id.actvMain_TV_B2A_Val);
+		tv_B2A = (TextView) actv.findViewById(R.id.actvMain_TV_B2A_Val);
 		
 		///////////////////////////////////
 		//
@@ -275,7 +422,10 @@ public class BO_CL implements OnClickListener {
 		// display: degree
 		//
 		///////////////////////////////////
-		tv_B2A.setText(String.valueOf(CONS.MainActv.degree));
+		CONS.MainActv.deg_B2A = CONS.MainActv.degree;
+		
+		tv_B2A.setText(String.valueOf(CONS.MainActv.deg_B2A));
+//		tv_B2A.setText(String.valueOf(CONS.MainActv.degree));
 		
 	}//case_ACTV_MAIN_IB_GET_B2A
 	
@@ -289,7 +439,7 @@ public class BO_CL implements OnClickListener {
 		// view
 		//
 		///////////////////////////////////
-		TextView tv_B2C = (TextView) actv.findViewById(R.id.actvMain_TV_B2C_Val);
+		tv_B2C = (TextView) actv.findViewById(R.id.actvMain_TV_B2C_Val);
 		
 		///////////////////////////////////
 		//
@@ -313,8 +463,20 @@ public class BO_CL implements OnClickListener {
 		// display: degree
 		//
 		///////////////////////////////////
-		tv_B2C.setText(String.valueOf(CONS.MainActv.degree));
+		CONS.MainActv.deg_B2C = CONS.MainActv.degree;
 		
+		tv_B2C.setText(String.valueOf(CONS.MainActv.deg_B2C));
+
+//		tv_B2C.setText(String.valueOf(CONS.MainActv.degree));
+
+		///////////////////////////////////
+		//
+		// loc
+		//
+		///////////////////////////////////
+		CONS.MainActv.locB_Longi = Double.valueOf(CONS.MainActv.longitude);
+		CONS.MainActv.locB_Lat = Double.valueOf(CONS.MainActv.latitude);
+
 	}//case_ACTV_MAIN_IB_GET_B2C
 	
 	

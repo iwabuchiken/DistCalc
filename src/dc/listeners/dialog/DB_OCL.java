@@ -131,6 +131,25 @@ public class DB_OCL implements OnClickListener {
 		//
 		switch (tag_name) {
 
+		case GENERIC_DISMISS://------------------------------------------------
+			
+			d1.dismiss();
+			
+			break;
+
+		case DLG_GENERIC_DISMISS_SECOND_DIALOG: // ----------------------------------------------------
+			
+			d2.dismiss();
+			
+			break;// case dlg_generic_dismiss_second_dialog
+
+		case DLG_GENERIC_DISMISS_THIRD_DIALOG://------------------------------------------------
+			
+			d3.dismiss();
+			
+			break;
+
+
 		default: // ----------------------------------------------------
 			break;
 		}//switch (tag_name)

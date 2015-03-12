@@ -223,7 +223,7 @@ public class BO_CL implements OnClickListener {
 
 		///////////////////////////////////
 		//
-		// calc: distance
+		// calc: degrees: validate
 		//
 		///////////////////////////////////
 		// validate
@@ -289,7 +289,7 @@ public class BO_CL implements OnClickListener {
 		
 		///////////////////////////////////
 		//
-		// calc
+		// calc: degrees
 		//
 		///////////////////////////////////
 //		double betha_2 = CONS.MainActv.deg_B2A;
@@ -317,6 +317,39 @@ public class BO_CL implements OnClickListener {
 		
 		///////////////////////////////////
 		//
+		// calc: distance: base
+		//
+		///////////////////////////////////
+		double dist_Base = Methods.getDistanceFromLatLonInKm(
+					CONS.MainActv.locA_Longi, 
+					CONS.MainActv.locA_Lat, 
+					
+					CONS.MainActv.locB_Longi, 
+					CONS.MainActv.locB_Lat);
+		
+		// convert km to m
+		dist_Base *= 1000;
+		
+		// Log
+		msg_Log = String.format(
+				Locale.JAPAN,
+				"A.longi=%f, A.lat=%f / B.longi=%f, B.lat=%f / dist=%f",CONS.MainActv.locA_Longi, 
+							CONS.MainActv.locA_Lat, 
+							
+							CONS.MainActv.locB_Longi, 
+							CONS.MainActv.locB_Lat, 
+							dist_Base
+				);
+		
+		Log.d("BO_CL.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+//		double AC = (1/Math.cos(alpha_1)) * ();
+		
+		
+		///////////////////////////////////
+		//
 		// disp: degrees
 		//
 		///////////////////////////////////
@@ -324,8 +357,10 @@ public class BO_CL implements OnClickListener {
 		
 		String message = String.format(
 				Locale.JAPAN,
-				"a1=%.2f / b1=%.2f", 
-				alpha_1, betha_1
+				"a1=%.2f / b1=%.2f /\n L=%.3f", 
+				alpha_1, betha_1, dist_Base
+//				"a1=%.2f / b1=%.2f", 
+//				alpha_1, betha_1
 				);
 		
 		tv_Calc.setText(message);

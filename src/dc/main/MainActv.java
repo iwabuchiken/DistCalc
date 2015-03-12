@@ -293,16 +293,16 @@ public class MainActv extends Activity implements LocationListener, SensorEventL
 	_onStart_SetListeners() {
 		// TODO Auto-generated method stub
 		
-		///////////////////////////////////
-		//
-		// LL: swipe
-		//
-		///////////////////////////////////
-		LinearLayout ll_Swipe = (LinearLayout) findViewById(R.id.actvMain_LL_Swipe);
-		
-		ll_Swipe.setTag(Tags.SwipeTags.ACTV_MAIN_LL_SWIPE);
-		
-		ll_Swipe.setOnTouchListener(new STL(this));
+//		///////////////////////////////////
+//		//
+//		// LL: swipe
+//		//
+//		///////////////////////////////////
+//		LinearLayout ll_Swipe = (LinearLayout) findViewById(R.id.actvMain_LL_Swipe);
+//		
+//		ll_Swipe.setTag(Tags.SwipeTags.ACTV_MAIN_LL_SWIPE);
+//		
+//		ll_Swipe.setOnTouchListener(new STL(this));
 		
 		///////////////////////////////////
 		//

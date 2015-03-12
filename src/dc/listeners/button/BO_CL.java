@@ -347,6 +347,21 @@ public class BO_CL implements OnClickListener {
 		
 //		double AC = (1/Math.cos(alpha_1)) * ();
 		
+		///////////////////////////////////
+		//
+		// calc: distance: AC,BC
+		//
+		///////////////////////////////////
+		double AC = (1 / Math.cos(Methods.deg2rad(alpha_1))) 
+					* (dist_Base * Math.tan(Methods.deg2rad(betha_1))) 
+					/ ((Math.tan(Methods.deg2rad(alpha_1)) + Math.tan(Methods.deg2rad(betha_1)))
+		);
+		
+		double BC = (dist_Base / Math.cos(Methods.deg2rad(betha_1))) 
+					* (1 - Math.tan(Methods.deg2rad(betha_1)) 
+							/ (Math.tan(Methods.deg2rad(alpha_1)) + Math.tan(Methods.deg2rad(betha_1))
+						)
+		);
 		
 		///////////////////////////////////
 		//
@@ -357,8 +372,12 @@ public class BO_CL implements OnClickListener {
 		
 		String message = String.format(
 				Locale.JAPAN,
-				"a1=%.2f / b1=%.2f /\n L=%.3f", 
-				alpha_1, betha_1, dist_Base
+				"a1=%.2f / b1=%.2f /\n L=%.3f\n"
+				+ "AC=%.3f / BC=%.3f", 
+				alpha_1, betha_1, dist_Base,
+				AC, BC
+//				"a1=%.2f / b1=%.2f /\n L=%.3f", 
+//				alpha_1, betha_1, dist_Base
 //				"a1=%.2f / b1=%.2f", 
 //				alpha_1, betha_1
 				);
